@@ -1,0 +1,7 @@
+{
+  "_comment": "check_interval_days controls how often a real check happens (see README). Each entry under 'games' is a display name -> list of twitchdrops.app slugs. Find a slug by visiting twitchdrops.app/game/<slug> - it's the part of the URL after /game/.",
+  "check_interval_days": 3,
+  "games": {
+    "Fortnite": ["fortnite"]
+  }
+}
