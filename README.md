@@ -14,6 +14,9 @@ own secrets, schedule, and game list.
 scheduled workflows on forks by default, so the daily run won't start
 automatically. Go to your fork's *Actions* tab, and you'll see a banner
 prompting you to enable workflows, click through that and you're set.
+(GitHub also auto-disables scheduled workflows on any public repo, fork or
+not, after 60 days with no repo activity, a config edit or manual run
+resets that clock.)
 
 ## Setup
 
