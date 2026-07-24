@@ -1,7 +1,12 @@
 {
   "_comment": "check_interval_days controls how often a real check happens (see README). Each entry under 'games' is a display name -> list of twitchdrops.app slugs. Find a slug by visiting twitchdrops.app/game/<slug> - it's the part of the URL after /game/.",
-  "check_interval_days": 3,
+  "check_interval_days": 2,
   "games": {
-    "Fortnite": ["fortnite"]
+   "Fortnite":["fortnite"],
+    "Sea of Thieves": ["sea-of-thieves"],
+    "The Division 2": ["tom-clancys-the-division-2"],
+    "Elder Scrolls Online": ["the-elder-scrolls-online"],
+    "Assassin's Creed": ["assassins-creed-black-flag-resynced"],
+    "Skull and Bones": ["skull-and-bones"]
   }
 }
