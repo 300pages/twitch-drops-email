@@ -1,0 +1,46 @@
+name: Check Twitch Drops
+
+on:
+  schedule:
+    # Runs daily. The script itself only actually performs a check every
+    # N days (set by check_interval_days in config.json), so this just
+    # needs to run at least as often as your desired interval.
+    - cron: "0 14 * * *"
+  workflow_dispatch:
+    inputs:
+      force_run:
+        description: "Run the check now, ignoring the check_interval_days schedule"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  check-drops:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run drop check
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          TO_EMAIL: ${{ secrets.TO_EMAIL }}
+          FORCE_RUN: ${{ github.event.inputs.force_run }}
+        run: python check_drops.py
+
+      - name: Commit updated state
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update drop tracking state"
+          file_pattern: state.json
