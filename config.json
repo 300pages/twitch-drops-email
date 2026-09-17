@@ -4,9 +4,6 @@
   "games": {
    "Fortnite":["fortnite"],
     "Sea of Thieves": ["sea-of-thieves"],
-    "The Division 2": ["tom-clancys-the-division-2"],
-    "Elder Scrolls Online": ["the-elder-scrolls-online"],
-    "Assassin's Creed": ["assassins-creed-black-flag-resynced"],
-    "Skull and Bones": ["skull-and-bones"]
+    "Elder Scrolls Online": ["the-elder-scrolls-online"]
   }
 }
